@@ -24,11 +24,11 @@ pipeline{
                 sh 'npm test'
             }    
         }
-        // stage('repots'){
-        //     steps{
-        //         testResultsProcessor: 'jest-junit'
-        //     }
-        // }
+         stage('repots'){
+             steps{
+                 testResultsProcessor: 'coverage/*.json'
+             }
+         }
            
             }
         }

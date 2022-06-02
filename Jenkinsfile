@@ -13,7 +13,7 @@ pipeline{
             steps{
                 sh 'rm -rf *.tar.gz'
                 sh 'npm install'
-                sh 'tar czf thirunode-$BUILD_NUMBER.tar.gz node_modules package.json LICENSE  '
+                sh 'tar czf thirunode-$BUILD_NUMBER.tar.gz node_modules package.json LICENSE.md  '
             }
         }
            

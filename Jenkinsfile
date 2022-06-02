@@ -11,12 +11,15 @@ pipeline{
         }
         stage('Build the code'){
             steps{
-                sh 'rm -rf *.tar.gz'
+                // sh 'rm -rf *.tar.gz'
                 sh 'npm install'
-                sh 'tar czf thirunode-$BUILD_NUMBER.tar.gz node_modules package.json LICENSE.md  '
+                // sh 'tar czf thirunode-$BUILD_NUMBER.tar.gz node_modules package.json LICENSE.md  '
+                sh 'npm run build --if-present'
             }
+        }
+        stage('test'){
+            sh 'npm test'
         }
            
             }
         }
-// jenkins file added

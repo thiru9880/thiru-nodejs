@@ -20,8 +20,12 @@ pipeline{
         stage('test'){
             steps{
                 sh 'npm test'
+            }    
+        }
+        stage('repots'){
+            steps{
+                junit testResults: 'coverage/*.xml'
             }
-            
         }
            
             }

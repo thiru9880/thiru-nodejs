@@ -26,7 +26,7 @@ pipeline{
         }
          stage('repots'){
              steps{
-                "testResultsProcessor": 'coverage/*.xml'
+                "testResultsProcessor":"coverage/*.xml"
              }
          }
            

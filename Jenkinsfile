@@ -26,7 +26,7 @@ pipeline{
         }
          stage('repots'){
              steps{
-                junit "testResult": 'coverage/*.xml'
+                "testResultsProcessor": 'coverage/*.xml'
              }
          }
            

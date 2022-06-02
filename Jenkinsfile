@@ -11,20 +11,22 @@ pipeline{
         }
         stage('Build the code'){
             steps{
+                sh 'npm ci'
                 // sh 'rm -rf *.tar.gz'
-                sh 'npm install'
+                sh 'npm install-ci-test'
                 // sh 'tar czf thirunode-$BUILD_NUMBER.tar.gz node_modules package.json LICENSE.md  '
-                sh 'npm run build --if-present'
+                sh 'npm build'
             }
         }
         stage('test'){
             steps{
+                sh 'npm install --save-dev jest'
                 sh 'npm test'
             }    
         }
         stage('repots'){
             steps{
-                junit testResults: 'coverage/*.xml'
+                testResultsProcessor: 'jest-junit'
             }
         }
            

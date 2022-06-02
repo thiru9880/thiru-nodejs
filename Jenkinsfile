@@ -15,7 +15,7 @@ pipeline{
                 // sh 'rm -rf *.tar.gz'
                 sh 'npm install-ci-test'
                 // sh 'tar czf thirunode-$BUILD_NUMBER.tar.gz node_modules package.json LICENSE.md  '
-                sh 'npm build'
+                sh 'npm run build'
             }
         }
         stage('test'){

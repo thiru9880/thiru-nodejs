@@ -22,7 +22,10 @@ pipeline{
             }    
         }
         stage('sonarrepots'){
-            sh 'npm run sonar'
+            steps{
+                sh 'npm run sonar'
+            }
+            
         }
         //  stage('repots'){
         //      steps{

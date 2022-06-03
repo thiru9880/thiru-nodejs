@@ -13,14 +13,12 @@ pipeline{
             steps{
                 sh 'npm ci'
                 // sh 'rm -rf *.tar.gz'
-                sh 'npm install-ci-test'
+                sh 'npm install'
                 // sh 'tar czf thirunode-$BUILD_NUMBER.tar.gz node_modules package.json LICENSE.md  '
-                sh 'npm run build'
             }
         }
         stage('test'){
             steps{
-                sh 'npm install --save-dev jest'
                 sh 'npm test'
             }    
         }

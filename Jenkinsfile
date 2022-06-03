@@ -21,6 +21,9 @@ pipeline{
                 sh 'npm test'
             }    
         }
+        stage('sonarrepots'){
+            sh 'npm run sonar'
+        }
         //  stage('repots'){
         //      steps{
         //         "testResultsProcessor":"coverage/*.xml"

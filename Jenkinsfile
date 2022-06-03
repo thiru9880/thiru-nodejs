@@ -11,14 +11,15 @@ pipeline{
         }
         stage('Build the code'){
             steps{
-                sh 'npm ci'
                 // sh 'rm -rf *.tar.gz'
+                nodejs(nodeJSInstallationName: 'nodejs12.22.9')
                 sh 'npm install'
                 // sh 'tar czf thirunode-$BUILD_NUMBER.tar.gz node_modules package.json LICENSE.md  '
             }
         }
         stage('test'){
             steps{
+                nodejs(nodeJSInstallationName: 'nodejs12.22.9')
                 sh 'npm test'
             }    
         }
